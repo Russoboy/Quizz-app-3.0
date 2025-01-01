@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Quizz-app.css">
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>Quiz Title</h1>
+        <div id="question-container">
+            <!-- Questions and options will be added dynamically using JavaScript -->
+        </div>
+        <button id="next-button">Next</button>
+        <button id="restart-button" style="color: white; background-color: rgb(128, 0, 6); padding: 0.7rem; border: 1px solid white; ">Restart Quiz</button>
+        <div id="result-container"></div>
+    </div>
+</body>
+    <script src="Quizz-app.js"></script>
+</body>
+</html>
