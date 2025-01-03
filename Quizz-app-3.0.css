@@ -39,3 +39,42 @@ button:hover {
     margin-top: 20px;
     font-weight: bold;
 }
+
+/* progress bar  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  /*display: grid;
+    place-items: center;
+    background-color: #000;*/
+}
+.progress {
+    /* position: absolute; */
+    /* top: 50%;
+    left: 50%; */
+    transform: translate(-50%, -50%);
+    background: #ddd;
+    height: 15px;
+    width:200px;
+    margin-top: 1rem;
+    margin-left: 17.5rem;
+    border-radius: 20px; 
+}
+.progress-done {
+    font-family: sans-serif;
+    font-weight: bolder;
+    color: #fff;
+    height: 100%;
+    background: linear-gradient(to left,rgb(253, 2, 140),
+                rgb(240, 199, 230));
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+    width: 0;
+    box-shadow: 0 0 3px -5px rgb(253, 2, 140), 0 3px 150px
+                rgb(255, 0, 140);
+    transition: width .5s ease;
+}
