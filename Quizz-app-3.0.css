@@ -79,3 +79,19 @@ body {
                 rgb(255, 0, 140);
     transition: width .5s ease;
 }
+
+.timer-container{
+      margin-left: 25rem;
+      background-color: grey;
+      padding: 0.7rem 0.4rem;
+      border-radius: 25%;
+      border: 1px solid black;
+}
+
+
+
+
+
+
+
+
