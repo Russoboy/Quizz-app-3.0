@@ -61,24 +61,35 @@ const checkAnswer = (selectedOption) => {
     };
 
 
+// Animated Transitions 🎨- Smooth animations for navigating between questions.
+// Next Button    
 nextButton.addEventListener("click", () => {
-    const selectedOption = document.querySelector('input[name="option"]:checked');
+        const selectedOption = document.querySelector('input[name="option"]:checked');
     
-    if (selectedOption) {
-        checkAnswer(selectedOption.value);
-        currentQuestionIndex++;
-        if (currentQuestionIndex < quizData.length) {
-            loadQuestion();
-            updateProgress();//new
+        if (selectedOption) {
+            checkAnswer(selectedOption.value);
+            
+            // Fade out the current question
+            questionContainer.style.opacity = 0;
+    
+            setTimeout(() => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < quizData.length) {
+                    loadQuestion(); // Load next question
+                    updateProgress();
+                    questionContainer.style.opacity = 1; // Fade in new question
+                } else {
+                    showResult(); // Show final result
+                    questionContainer.style.opacity = 1;
+                    nextButton.style.display = "none";
+                    restartButton.style.display = "block";
+                }
+            }, 500); // Matches the transition duration in CSS
         } else {
-            showResult();
-            nextButton.style.display = "none";
-            restartButton.style.display = "block";
+            alert("Please select an option");
         }
-    } else {
-        alert("Please select an option");
-    }
-});
+    });
+    
 
 // Initial load
 loadQuestion();
@@ -111,8 +122,8 @@ const restartQuiz = () => {
 restartButton.addEventListener("click", restartQuiz);
 
 //===IMPROVEMENTS===
-//Progress Bar -
-//Animated Transitions - 
-//Timer for each question -
-//Review incorrect answers -
-//Random Question Order -
+// 1. Timer for Each Question ⏱️ - Add a countdown timer to create urgency.
+// 2. Progress Bar 📊 - Show progress with visual feedback (e.g., "3/5 questions completed").✅
+// 3. Custom Messages 📝 - Display feedback for correct/incorrect answers (e.g., "Great job!" or "Try again!").
+// 4. Review Incorrect Answers - Let users review questions they answered incorrectly.
+// 5. Random Question Order 🎲 - Shuffle questions each time the quiz starts.
