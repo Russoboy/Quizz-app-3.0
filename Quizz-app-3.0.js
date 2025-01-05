@@ -68,6 +68,15 @@ const updateProgress = () => {
     progressBar.textContent = Math.floor(progressPercentage) + "%";
 };
 
+//Using the fisherYatesShuffle method
+function shuffleQuestionArray(array) {
+    for (let i = array.length - 1; i > 0;  i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));        
+    [array[i], array[randomIndex]] = [array[randomIndex], array[i]];        
+    }
+    return array;
+}
+
 const showResult = () => {
     clearInterval(countdown);
     resultContainer.innerHTML = `Your score: ${score} out of ${quizData.length}`;
