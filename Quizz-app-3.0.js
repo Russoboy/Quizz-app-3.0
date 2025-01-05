@@ -13,6 +13,11 @@ const quizData = [
         question: "Who is the President of Russia?",
         options: ["Vladimir Putin", "Dmitry Medvedev", "Boris Yeltsin", "Mikhail Gorbachev"],
         correctAnswer: "Vladimir Putin"
+    },
+    {
+        question: "Who is the Capital of Germany?",
+        options: ["Berlin", "Munich", "Harmburg", "Frankfurt"],
+        correctAnswer: "Vladimir Putin"
     }
 ];
 
@@ -119,19 +124,22 @@ restartButton.addEventListener("click", () => {
     nextButton.style.display = "block";
     restartButton.style.display = "none";
     resultContainer.innerHTML = "";
+    shuffleQuestionArray(quizData)
     loadQuestion();
     updateProgress();
 });
 
 // Initialize the first question and progress
 window.onload = () => {
+    shuffleQuestionArray(quizData)
     loadQuestion();
     updateProgress();
 };
 
 //===IMPROVEMENTS===
-// 1. Timer for Each Question ⏱️ - Add a countdown timer to create urgency.
-// 2. Progress Bar 📊 - Show progress with visual feedback (e.g., "3/5 questions completed").✅
+// 1. Timer for Each Question ⏱️✅- Add a countdown timer to create urgency.✅
+// 2. Progress Bar 📊✅ - Show progress with visual feedback (e.g., "3/5 questions completed").✅
 // 3. Custom Messages 📝 - Display feedback for correct/incorrect answers (e.g., "Great job!" or "Try again!").
 // 4. Review Incorrect Answers - Let users review questions they answered incorrectly.
-// 5. Random Question Order 🎲 - Shuffle questions each time the quiz starts.
+// 5. Random Question Order 🎲✅ - Shuffle questions each time the quiz starts.✅
+// 6.  Animated Transitions 🎨✅	Smooth animations for navigating between questions.✅
